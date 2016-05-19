@@ -21,12 +21,24 @@
     tags:
       -go
 
+  - name: GO | prepare  /etc/profile.d/go_path.sh
+    file: path=/etc/profile.d/go_path.sh  state=touch mode="u=rw,g=r,o=r"
+    become: yes
+    tags:
+      -go
+
   - name: Add the Go bin directory to the PATH environment variable for all users
     lineinfile: dest=/etc/profile.d/go_path.sh regexp="{{item.regexp}}" line="{{item.line}}"
     become: yes
 #    when: go_present | failed
     with_items:
       - {regexp: "^export PATH=.*", line: "^export PATH=$PATH:/usr/local/go/bin"}
+    tags:
+      -go
+
+  - name: GO | prepare /etc/profile.d/go_path.sh
+    file: path=/etc/profile.d/go_path.sh  state=touch mode="u=rw,g=r,o=r"
+    become: yes
     tags:
       -go
 
