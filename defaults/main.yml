@@ -1,8 +1,8 @@
 ---
 # defaults file for sa-go
 
-  root_dir: {{ role_path }}
-  role_dir: {{ role_path }}
+  root_dir: "{{ role_path }}"
+  role_dir: "{{ role_path }}"
 
   go_version: 1.6
 
