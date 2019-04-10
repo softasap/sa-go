@@ -4,5 +4,5 @@
   root_dir: "{{ role_path }}"
   role_dir: "{{ role_path }}"
 
-  go_version: 1.6
+  go_version: 1.12.3
 
